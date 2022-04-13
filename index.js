@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+// const license = require('license')
 
 // TODO: Create an array of questions for user input
 function askReadMeQuestions() {
@@ -31,7 +32,6 @@ function askReadMeQuestions() {
             name: 'license',
             message: 'What kind of license should your project have?',
             choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
-
         },
         {
             type: 'input',
@@ -56,7 +56,13 @@ function askReadMeQuestions() {
         },
     ])
     .then((response) => {
-        writeToFile("README.md", JSON.stringify(response))
+        console.log(response.license)
+        // const answer = JSON.stringify(response)
+       
+        // console.log(answer.license)
+        // console.log(answer)
+        // writeToFile("README.md", JSON.stringify(response))
+    
     })
 }
 
@@ -68,7 +74,8 @@ function writeToFile(fileName, data) {
             console.log(err)
         } else {
             console.log("Generating README...")
-            console.log(data)
+            console.log(data.license)
+            
         }
     })
 }
