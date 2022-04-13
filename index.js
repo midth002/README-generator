@@ -16,10 +16,13 @@ const questions = [ 'What is your GitHub username?',
                     'What does the user need to know about contributing to the repo?'
 ]
 
+const choices = ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, generateMarkDown(data.title, data.license, data.description), (err) => {
+    const readMeContent = generateMarkDown(data)
+    fs.writeFile(fileName, readMeContent, (err) => {
         if (err) {
             console.log(err)
         } 
@@ -54,7 +57,7 @@ function init() {
             type: 'list',
             name: 'license',
             message: questions[4],
-            choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
+            choices: choices
         },
         {
             type: 'input',
@@ -80,8 +83,8 @@ function init() {
     ])
     .then((response) => {
         console.log(JSON.stringify(response.license))
-        
         console.log(response)
+        writeToFile("README.md", response)
 }
     );
 }
