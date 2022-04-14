@@ -95,7 +95,6 @@ function renderLicenseSection(license) {
       return 'There is no license for this project.'
     }
     
-    
 }
 
 // TODO: Create a function to generate markdown for README
@@ -116,7 +115,7 @@ function generateMarkdown({title, license, description, email, username, depende
   
   * [Tests](#tests)
 
-  * [license](#license)
+  * [License](#License)
 
   * [Questions](#questions)
 
@@ -154,7 +153,7 @@ function generateMarkdown({title, license, description, email, username, depende
 
   ## Questions
   
-  If you have any questions about the repo, open an issue contact me directly at [${email}](mailto:${email}). You can find more work at ${username}
+  If you have any questions about the repo, open an issue contact me directly at [${email}](mailto:${email}). You can find more work at [${username}](https://github.com/${username}/)
   
   
 `;
