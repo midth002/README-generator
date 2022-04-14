@@ -44,7 +44,7 @@ function renderLicenseLink(license) {
 // }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown({title, license, description}) {
+function generateMarkdown({title, license, description, email, username, dependencies, test}) {
   return `# ${title}
 
   ${renderLicenseBadge(license)}]${renderLicenseLink(license)}
@@ -56,8 +56,6 @@ function generateMarkdown({title, license, description}) {
   * [Installation](#installation)
   
   * [Usage](#usage)
-  
-  * [License](#license)
   
   * [Contributing](#contributing)
   
@@ -71,27 +69,27 @@ function generateMarkdown({title, license, description}) {
   
   ## Installation 
 
-  
-  
   To install the necessary dependencies, run the following command:
   
-
+  \`\`\`Dependencies
+   ${dependencies}
+  \`\`\`\
   
   ## Usage
-  
-  ## License 
   
   ## Contributing
   
   ## Tests
   
-  To run tests, run the following command: 
-  
+  To run a test, run the following command: 
+
+  \`\`\`tests
+  ${test}
+ \`\`\`\
  
-  
   ## Questions
   
-  If you have any questions about the repo, open an issue or contact me directly at [midth002@gmail.com](mailto:midth002@gmail.com)
+  If you have any questions about the repo, open an issue on my github page ${username} or contact me directly at [${email}](mailto:${email})
   
   
 `;
