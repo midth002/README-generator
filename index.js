@@ -84,8 +84,7 @@ function init() {
         },
     ])
     .then((response) => {
-        console.log(JSON.stringify(response.license))
-        console.log(response)
+        console.log("Readme file success!")
         writeToFile("README.md", response)
 }
     );
