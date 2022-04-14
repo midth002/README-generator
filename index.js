@@ -57,17 +57,19 @@ function init() {
             type: 'list',
             name: 'license',
             message: questions[4],
-            choices: choices
+            choices: choices,
         },
         {
             type: 'input',
             name: 'dependencies',
-            message: questions[5]
+            message: questions[5],
+            default: 'npm i'
         },
         {
             type: 'input',
             name: 'tests',
-            message: questions[6]
+            message: questions[6],
+            default: 'npm run test'
         },
         {
             type: 'input',

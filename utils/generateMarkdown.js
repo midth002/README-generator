@@ -57,14 +57,14 @@ const licenseInfo = [
 function renderLicenseBadge(license) {
   switch(license) {
     case "APACHE 2.0":
-      return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)"
+      return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]"
     case "GPL 3.0": 
-      return "[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)"
+      return "[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)]"
     case "BSD 3": 
-    return "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)"
+    return "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)]"
     case "MIT": 
-      return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)"
-    default: 
+      return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]"
+    case "None": 
       return ""
   }
 }
@@ -81,7 +81,7 @@ function renderLicenseLink(license) {
     return "(https://opensource.org/licenses/BSD-3-Clause)"
     case "MIT": 
       return "(https://opensource.org/licenses/MIT)"
-    default : 
+    case "None": 
       return ""
   }
 }
@@ -89,10 +89,10 @@ function renderLicenseLink(license) {
 //TODO: Create a function that returns the license section of README
 //If there is no license, return an empty string
 function renderLicenseSection(license) {
-    if (license) {
-      return `This project is licensed under the ${(license)} license`
-    } else {
+    if (license == "None") {
       return 'There is no license for this project.'
+    } else {
+      return `This project is licensed under the ${(license)} license`
     }
     
 }
@@ -101,7 +101,7 @@ function renderLicenseSection(license) {
 function generateMarkdown({title, license, description, email, username, dependencies, tests, using, contributing}) {
   return `# ${title}
 
-  ${renderLicenseBadge(license)}]${renderLicenseLink(license)}
+  ${renderLicenseBadge(license)}${renderLicenseLink(license)}
   
   ## Table of Contents 
 
