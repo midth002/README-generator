@@ -115,7 +115,7 @@ function generateMarkdown({title, license, description, email, username, depende
   
   * [Tests](#tests)
 
-  * [License](#License)
+  * [License](#license)
 
   * [Questions](#questions)
 
