@@ -52,4 +52,6 @@
   
   If you have any questions about the repo, open an issue contact me directly at [midth002@gmail.com](mailto:midth002@gmail.com). You can find more work at [midth002](https://github.com/midth002/)
   
+  ## Video Link
+  [How-to-video](https://drive.google.com/file/d/1N1XLp-RfX5frfNkWLSdpt8TH-LzwQ_Pc/view)
   
